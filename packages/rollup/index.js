@@ -13,6 +13,16 @@ function init(cmdPath, name, option) {
         option,
     );
 
+    util.copyFile(
+        path.resolve(__dirname, './template/common/utils.js'),
+        path.resolve(cmdPath, name, 'config/utils.js')
+    );
+
+    util.copyFile(
+        path.resolve(__dirname, `./template/${type}/rollup.config.lib.js`),
+        path.resolve(cmdPath, name, 'config/rollup.config.lib.js')
+    );
+
     if (module.umd) {
         util.copyFile(
             path.resolve(__dirname, `./template/${type}/rollup.config.aio.js`),
@@ -61,6 +71,16 @@ function update(cmdPath, option) {
         path.resolve(__dirname, `./template/${type}/rollup.js.tmpl`),
         path.resolve(cmdPath, 'config/rollup.js'),
         option,
+    );
+
+    util.copyFile(
+        path.resolve(__dirname, './template/common/utils.js'),
+        path.resolve(cmdPath, name, 'config/utils.js')
+    );
+
+    util.copyFile(
+        path.resolve(__dirname, `./template/${type}/rollup.config.lib.js`),
+        path.resolve(cmdPath, name, 'config/rollup.config.lib.js')
     );
     
     if (module.umd) {

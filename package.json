@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/yanhaijing/jslib-base#readme",
   "devDependencies": {
-    "lerna": "^3.16.4"
+    "lerna": "^3.16.4",
+    "rollup-generate-entry": "^1.0.1"
   },
   "private": true,
   "workspaces": [

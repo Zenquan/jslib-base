@@ -5,9 +5,9 @@ const yan2 = 'yan2';
 export default yan2;
 
 class A {
-    aaa() {}
+  aaa() {}
 }
 
 export class B extends A {
-    bbb() {}
+  bbb() {}
 }

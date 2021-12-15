@@ -20,9 +20,9 @@ function init(cmdPath, name, option) {
         path.resolve(__dirname, `./template/CHANGELOG.${lang}.md`),
         path.resolve(cmdPath, name, './CHANGELOG.md')
     );
-    copyFile(
-        path.resolve(__dirname, `./template/doc.${lang}.md`),
-        path.resolve(cmdPath, name, './doc/api.md')
+    copyDir(
+        path.resolve(__dirname, `./template/docs`),
+        path.resolve(cmdPath, name, './docs')
     );
 }
 

@@ -4,7 +4,8 @@
       <%if (module.esm) {%>"build:esm": "rollup -c config/rollup.config.esm.js",<%}%>
       <%if (module.umd) {%>"build:aio": "rollup -c config/rollup.config.aio.js",<%}%>
       <%if (module.umd) {%>"build:aio.min": "cross-env NODE_ENV=production npm run build:aio",<%}%>
-      "build": "npm run clean<%if (module.commonjs) {%> && npm run build:self<%}%><%if (module.esm) {%> && npm run build:esm<%}%><%if (module.umd) {%> && npm run build:aio && npm run build:aio.min<%}%>"
+      "build:lib": "rollup -c config/rollup.config.lib.js",
+      "build": "npm run clean<%if (module.commonjs) {%> && npm run build:self<%}%><%if (module.esm) {%> && npm run build:esm<%}%><%if (module.umd) {%> && npm run build:aio && npm run build:aio.min && npm run build:lib<%}%>"
     },
     "devDependencies": {
       "rollup": "0.57.1",
@@ -13,9 +14,10 @@
       "rollup-plugin-node-resolve": "3.0.3",
       "rollup-plugin-typescript2": "0.18.0",
       "rollup-plugin-uglify": "1.0.0",
+      "rollup-generate-entry": "^1.0.1",
       "ts-node": "7.0.1",
       "tslib": "1.9.3",
-      "typescript": "3.3.3333"
+      "typescript": "^4.5.2"
     }
   }
   

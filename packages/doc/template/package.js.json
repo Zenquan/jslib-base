@@ -1,11 +1,12 @@
 {
   "scripts": {
-    "docs:jsdoc2md": "rimraf doc/README.md && npx jsdoc2md src/* >> doc/README.md",
-    "docs:build": "npm run docs:jsdoc2md && npx vuepress build doc",
-    "docs:dev": "npm run docs:jsdoc2md && npx vuepress dev doc"
+    "docs:api": "jsdoc2md src/* >> docs/pages/api/modules.md",
+    "docs:build": "npm run docs:jsdoc2md && vuepress build docs",
+    "docs:dev": "npm run docs:api && vuepress dev docs"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^6.0.1",
-    "vuepress": "^1.8.0"
+    "vuepress": "^1.8.0",
+    "@vuepress/plugin-back-to-top": "^1.8.0"
   }
 }

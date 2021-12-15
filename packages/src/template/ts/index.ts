@@ -12,7 +12,7 @@ console.log(b);
 console.log(B);
 
 export function greeter(person: string): string {
-    return 'Hello, ' + person;
+  return 'Hello, ' + person;
 }
 
 export const name = 'base';

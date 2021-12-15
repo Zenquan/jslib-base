@@ -1,16 +1,13 @@
 {
   "scripts": {
-    "docs:jsdoc2md": "rimraf doc/README.md && npx jsdoc2md --files src/* --configure ./jsdoc2md.json >> doc/README.md",
-    "docs:build": "npm run docs:jsdoc2md && npx vuepress build doc",
-    "docs:dev": "npm run docs:jsdoc2md && npx vuepress dev doc"
+    "docs:api": "typedoc --out docs/pages/api src/index.ts",
+    "docs:dev": "npm run docs:api && vuepress dev docs",
+    "docs:build": "npm run docs:api && vuepress build docs"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
-    "jsdoc-babel": "^0.5.0",
-    "jsdoc-to-markdown": "^6.0.1",
-    "vuepress": "^1.8.0"
+    "typedoc": "^0.22.10",
+    "typedoc-plugin-markdown": "^3.11.7",
+    "vuepress": "^1.8.0",
+    "@vuepress/plugin-back-to-top": "^1.8.0"
   }
 }
