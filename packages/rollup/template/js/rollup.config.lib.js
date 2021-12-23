@@ -1,10 +1,10 @@
 // rollup.config.lib.js
-var GenerateEntry = require('rollup-generate-entry');
+var multi = require('rollup-plugin-multi-entry');
 var utils = require('./utils.js');
 var common = require('./rollup.js');
 
 var plugins = [
-  GenerateEntry(''), 
+  multi(), 
   common.getCompiler()
 ];
 
